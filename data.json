@@ -1,0 +1,343 @@
+{
+  "intents": [
+    {
+      "tag": "salam",
+      "patterns": ["halo", "hi", "pagi", "konnichiwa", "permisi", "selamat siang", "selamat malam", "hey", "yo", "hai"],
+      "responses": [
+        {"text": "Konnichiwa! Saya Animepedia-Bot v2.0. Ada yang bisa saya bantu?", "image": null},
+        {"text": "Halo! Mau tanya info anime apa hari ini?", "image": null}
+      ]
+    },
+    {
+      "tag": "terimakasih",
+      "patterns": ["makasih", "terima kasih", "thanks", "arigatou"],
+      "responses": [
+        {"text": "Sama-sama! Senang bisa membantu!", "image": null}
+      ]
+    },
+    {
+      "tag": "bye",
+      "patterns": ["bye", "sampai jumpa", "dah", "exit", "keluar"],
+      "responses": [
+        {"text": "Sayonara! Sampai jumpa lagi.", "image": null},
+        {"text": "Oke, senang bisa membantu!", "image": null}
+      ]
+    },
+    {
+      "tag": "tanya_bot",
+      "patterns": ["kamu siapa", "siapa kamu", "bot apa ini"],
+      "responses": [
+        {"text": "Saya Animepedia-Bot v2.0, sebuah asisten AI sederhana yang dibuat untuk proyek UTS. Saya tahu beberapa hal tentang anime!", "image": null}
+      ]
+    },
+    {
+      "tag": "creator",
+      "patterns": ["siapa yang buat kamu", "pembuat kamu", "developer"],
+      "responses": [
+        {"text": "Saya dibuat oleh Munique sebagai bagian dari proyek Artificial Intelligence-nya.", "image": null}
+      ]
+    },
+    {
+      "tag": "rekomendasi_action",
+      "patterns": ["rekomendasi action", "anime action"],
+      "responses": [
+        {
+          "text": "Untuk genre action, coba tonton Jujutsu Kaisen. Lagi populer banget!", 
+          "image": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_romance",
+      "patterns": ["rekomendasi romance", "anime romantis"],
+      "responses": [
+        {
+          "text": "Kalau suka romance, Kaguya-sama: Love Is War itu komedi romantis yang cerdas.",
+          "image": "https://cdn.myanimelist.net/images/anime/1295/106551.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_isekai",
+      "patterns": ["rekomendasi isekai", "anime isekai"],
+      "responses": [
+        {
+          "text": "Mushoku Tensei: Jobless Reincarnation dianggap sebagai salah satu anime Isekai modern terbaik saat ini.",
+          "image": "https://cdn.myanimelist.net/images/anime/1530/117776.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_sol",
+      "patterns": ["rekomendasi slice of life", "anime santai", "slice of life"],
+      "responses": [
+        {
+          "text": "Untuk anime santai (Slice of Life), Yuru Camp (Laid-Back Camp) sangat direkomendasikan. Bikin tenang!",
+          "image": "https://cdn.myanimelist.net/images/anime/4/89877.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_scifi",
+      "patterns": ["rekomendasi sci-fi", "anime scifi", "sci fi"],
+      "responses": [
+        {
+          "text": "Untuk Sci-Fi klasik, Cowboy Bebop adalah mahakarya. Jika suka yang lebih modern, Steins;Gate atau Psycho-Pass bisa jadi pilihan.",
+          "image": "https://cdn.myanimelist.net/images/anime/4/1913.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_fantasy",
+      "patterns": ["rekomendasi fantasy", "anime fantasy"],
+      "responses": [
+        {
+          "text": "Genre fantasi sangat luas. Made in Abyss menawarkan petualangan fantasi gelap, sementara Frieren: Beyond Journey's End menawarkan kisah yang lebih tenang dan reflektif.",
+          "image": "https://cdn.myanimelist.net/images/anime/1333/139362.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_horror",
+      "patterns": ["rekomendasi horror", "anime horror", "anime seram"],
+      "responses": [
+        {
+          "text": "Mencari horror? Another punya nuansa misteri yang kental. Shiki juga bagus untuk tema vampir yang lebih gelap. Atau Higurashi jika suka misteri psikologis.",
+          "image": "https://cdn.myanimelist.net/images/anime/11/31653.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_comedy",
+      "patterns": ["rekomendasi comedy", "anime komedi", "anime lucu"],
+      "responses": [
+        {
+          "text": "Gintama adalah raja komedi parodi. Jika suka yang lebih absurd, Nichijou atau Grand Blue sangat lucu.",
+          "image": "https://cdn.myanimelist.net/images/anime/3/72410.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "rekomendasi_sports",
+      "patterns": ["rekomendasi sports", "anime olahraga"],
+      "responses": [
+        {
+          "text": "Tentu! Haikyuu!! (Voli) sangat populer. Slam Dunk (Basket) adalah klasik, dan Blue Lock (Sepak Bola) sedang naik daun.",
+          "image": "https://cdn.myanimelist.net/images/anime/1146/138245.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_jujutsu",
+      "patterns": ["jujutsu kaisen", "jujutsu", "jjk"],
+      "responses": [
+        {
+          "text": "Jujutsu Kaisen bercerita tentang Yuji Itadori, seorang siswa SMA yang bergabung dengan organisasi penyihir Jujutsu untuk melawan roh kutukan.",
+          "image": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_naruto",
+      "patterns": ["naruto"],
+      "responses": [
+        {
+          "text": "Naruto adalah kisah tentang seorang ninja muda, Uzumaki Naruto, yang bercita-cita menjadi Hokage, pemimpin di desanya.",
+          "image": "https://cdn.myanimelist.net/images/anime/1141/142503.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_aot",
+      "patterns": ["attack on titan", "aot", "shingeki no kyojin"],
+      "responses": [
+        {
+          "text": "Attack on Titan (Shingeki no Kyojin) bercerita tentang Eren Yeager, yang bersumpah untuk memusnahkan para Titan setelah mereka menghancurkan kampung halamannya.",
+          "image": "https://cdn.myanimelist.net/images/anime/10/47347.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_onepiece",
+      "patterns": ["one piece", "luffy"],
+      "responses": [
+        {
+          "text": "One Piece adalah petualangan Monkey D. Luffy dan krunya, Bajak Laut Topi Jerami, dalam mencari harta karun legendaris 'One Piece' untuk menjadi Raja Bajak Laut.",
+          "image": "https://cdn.myanimelist.net/images/anime/6/73245.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_demonslayer",
+      "patterns": ["demon slayer", "kimetsu no yaiba", "kny"],
+      "responses": [
+        {
+          "text": "Demon Slayer (Kimetsu no Yaiba) mengikuti kisah Tanjiro Kamado, yang menjadi pembasmi iblis setelah keluarganya dibantai dan adiknya, Nezuko, diubah menjadi iblis.",
+          "image": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_spyxfamily",
+      "patterns": ["spy x family", "spy family"],
+      "responses": [
+        {
+          "text": "Spy x Family adalah komedi aksi tentang mata-mata bernama Loid Forger yang harus 'membangun keluarga' palsu untuk sebuah misi, tanpa tahu bahwa istri angkatnya adalah pembunuh bayaran dan putri angkatnya adalah telepat.",
+          "image": "https://cdn.myanimelist.net/images/anime/1441/122795.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_gintama",
+      "patterns": ["gintama"],
+      "responses": [
+        {
+          "text": "Gintama adalah anime komedi-parodi unik yang berlatar di era Edo yang telah dikuasai alien. Ceritanya mengikuti Gintoki Sakata, seorang samurai pemalas yang bekerja serabutan.",
+          "image": "https://cdn.myanimelist.net/images/anime/10/73274.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_bleach",
+      "patterns": ["bleach", "ichigo"],
+      "responses": [
+        {
+          "text": "Bleach mengikuti Ichigo Kurosaki, seorang remaja yang bisa melihat roh. Setelah pertemuan dengan Shinigami (Dewa Kematian) bernama Rukia Kuchiki, ia tanpa sengaja mendapatkan kekuatan Shinigami.",
+          "image": "https://cdn.myanimelist.net/images/anime/1337/99013.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_deathnote",
+      "patterns": ["death note", "light yagami", "kira"],
+      "responses": [
+        {
+          "text": "Death Note bercerita tentang Light Yagami, seorang siswa jenius yang menemukan buku catatan misterius. Buku itu bisa membunuh siapa saja yang namanya ditulis di dalamnya.",
+          "image": "https://cdn.myanimelist.net/images/anime/9/9453.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_fma",
+      "patterns": ["fullmetal alchemist", "fma", "fma brotherhood"],
+      "responses": [
+        {
+          "text": "Fullmetal Alchemist: Brotherhood mengisahkan petualangan Edward dan Alphonse Elric. Setelah gagal melakukan transmutasi manusia, mereka mencari Batu Filsuf untuk mengembalikan tubuh mereka.",
+          "image": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_steinsgate",
+      "patterns": ["steins gate", "steinsgate"],
+      "responses": [
+        {
+          "text": "Steins;Gate adalah kisah Rintarou Okabe, seorang 'ilmuwan gila' yang menemukan cara mengirim pesan ke masa lalu. Penemuannya itu membawanya ke dalam konspirasi berbahaya.",
+          "image": "https://cdn.myanimelist.net/images/anime/11/75247.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_hunterxhunter",
+      "patterns": ["hunter x hunter", "hxh", "gon"],
+      "responses": [
+        {
+          "text": "Hunter x Hunter bercerita tentang Gon Freecss, seorang anak laki-laki yang bercita-cita menjadi Hunter (pemburu profesional) untuk menemukan ayahnya, yang juga seorang Hunter legendaris.",
+          "image": "https://cdn.myanimelist.net/images/anime/11/33657.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_onepunchman",
+      "patterns": ["one punch man", "opm", "saitama"],
+      "responses": [
+        {
+          "text": "One-Punch Man adalah kisah Saitama, seorang pahlawan yang bisa mengalahkan musuh mana pun hanya dengan satu pukulan. Masalahnya, dia menjadi bosan karena terlalu kuat.",
+          "image": "https://cdn.myanimelist.net/images/anime/12/76049.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_codegeass",
+      "patterns": ["code geass", "lelouch"],
+      "responses": [
+        {
+          "text": "Code Geass berfokus pada Lelouch vi Britannia, seorang pangeran yang dibuang yang mendapatkan kekuatan 'Geass'. Ia menggunakannya untuk memimpin pemberontakan melawan kekaisaran ayahnya.",
+          "image": "https://cdn.myanimelist.net/images/anime/5/50331.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "sinopsis_haikyuu",
+      "patterns": ["haikyuu", "haikyu", "anime voli"],
+      "responses": [
+        {
+          "text": "Haikyuu!! adalah anime olahraga tentang Shoyo Hinata, seorang siswa pendek yang bercita-cita menjadi pemain voli hebat. Ia bergabung dengan tim SMA Karasuno.",
+          "image": "https://cdn.myanimelist.net/images/anime/7/75199.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "info_gojo",
+      "patterns": ["gojo satoru", "siapa gojo", "info gojo"],
+      "responses": [
+        {
+          "text": "Gojo Satoru adalah salah satu karakter utama di Jujutsu Kaisen. Dia adalah penyihir Jujutsu terkuat di dunia, dikenal dengan teknik 'Limitless' dan 'Six Eyes'. Dia juga guru dari Yuji Itadori.",
+          "image": "https://cdn.myanimelist.net/images/characters/3/404419.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "info_eren",
+      "patterns": ["eren yeager", "eren jaeger", "siapa eren"],
+      "responses": [
+        {
+          "text": "Eren Yeager adalah protagonis dari Attack on Titan. Awalnya dia adalah anak laki-laki yang berapi-api yang bersumpah membasmi semua Titan, namun ceritanya berkembang menjadi jauh lebih kompleks.",
+          "image": "https://cdn.myanimelist.net/images/characters/10/228101.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "info_l_lawliet",
+      "patterns": ["l lawliet", "detektif l", "siapa l"],
+      "responses": [
+        {
+          "text": "L (L Lawliet) adalah detektif terhebat di dunia dalam serial Death Note. Dia adalah antagonis utama bagi Kira (Light Yagami) dan dikenal karena kejeniusannya, serta kebiasaannya yang eksentrik.",
+          "image": "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,q_auto,w_720/644b5c2526cf77001db5d6a4.png"
+        }
+      ]
+    },
+    {
+      "tag": "tanya_best_anime",
+      "patterns": ["anime terbaik", "best anime", "anime nomor 1"],
+      "responses": [
+        {
+          "text": "Banyak yang bilang Fullmetal Alchemist: Brotherhood atau Steins;Gate adalah yang terbaik. Tapi semua kembali ke selera pribadi!", 
+          "image": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "tanya_apa_itu_manga",
+      "patterns": ["apa itu manga", "manga adalah"],
+      "responses": [
+        {"text": "Manga adalah komik atau novel grafis yang dibuat di Jepang, atau menggunakan gaya komik Jepang. Sebagian besar anime diadaptasi dari manga.", "image": null}
+      ]
+    },
+    {
+      "tag": "tanya_apa_itu_waifu_husbando",
+      "patterns": ["apa itu waifu", "apa itu husbando", "waifu adalah", "husbando adalah"],
+      "responses": [
+        {"text": "'Waifu' (dari kata 'Wife') dan 'Husbando' (dari 'Husband') adalah istilah slang di komunitas anime untuk menyebut karakter fiksi yang sangat mereka sukai atau anggap sebagai pasangan ideal.", "image": null}
+      ]
+    },
+    {
+      "tag": "default",
+      "patterns": [],
+      "responses": [
+        {"text": "Gomen... (Maaf), saya kurang paham pertanyaan itu. Bisa coba tanyakan tentang anime lain?", "image": null},
+        {"text": "Maaf, data saya belum sampai situ. Mungkin Anda bisa tanya tentang One Piece atau Demon Slayer?", "image": null}
+      ]
+    }
+  ]
+}

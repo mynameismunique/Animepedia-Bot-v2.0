@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animepedia-Bot v2.0</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #1a1a2e;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            color: #e0e0e0;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        #chat-container {
+            width: 90%;
+            max-width: 600px; 
+            margin: 20px auto;
+            border: 1px solid #4a4a6a; 
+            border-radius: 12px;
+            background-color: #2a2a4e;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex; 
+            flex-direction: column; 
+            height: 85vh;
+        }
+        #chat-header { 
+            text-align: center; 
+            padding: 15px; 
+            border-bottom: 1px solid #4a4a6a; 
+            background-color: #1f1f3d; 
+            border-radius: 12px 12px 0 0;
+        }
+        #chat-header h3 { margin: 0; color: #f0f0f0; }
+        #chat-box { 
+            flex-grow: 1; 
+            padding: 20px; 
+            overflow-y: auto; 
+        }
+
+        #chat-box::-webkit-scrollbar { width: 6px; }
+        #chat-box::-webkit-scrollbar-thumb { background: #4a4a6a; border-radius: 3px; }
+        #chat-box::-webkit-scrollbar-track { background: transparent; }
+        
+        #input-area { 
+            display: flex; 
+            padding: 15px; 
+            border-top: 1px solid #4a4a6a; 
+            background-color: #1f1f3d;
+        }
+        #user-input { 
+            flex-grow: 1; 
+            border: 1px solid #4a4a6a; 
+            border-radius: 20px; 
+            padding: 10px 15px; 
+            font-size: 16px; 
+            background-color: #2a2a4e;
+            color: #e0e0e0;
+        }
+        #user-input::placeholder { color: #888; }
+        
+        #send-btn {
+            background-color: #e94560;
+            color: white; 
+            border: none;
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            margin-left: 10px; 
+            cursor: pointer; 
+            font-size: 16px;
+            font-weight: 700;
+        }
+        #send-btn:hover { background-color: #c7304a; }
+        
+        .message { margin-bottom: 15px; }
+        .user-msg { text-align: right; }
+        .bot-msg { text-align: left; }
+        
+        .msg-bubble { 
+            display: inline-block; 
+            padding: 10px 15px; 
+            border-radius: 18px;
+            max-width: 85%; 
+            line-height: 1.4;
+        }
+        .user-msg .msg-bubble { 
+            background-color: #e94560; 
+            color: white; 
+            border-bottom-right-radius: 4px;
+        }
+        .bot-msg .msg-bubble { 
+            background-color: #4a4a6a; 
+            color: #f0f0f0;
+            border-bottom-left-radius: 4px;
+        }
+        
+        .chat-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #5a5a7a;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chat-container">
+        <div id="chat-header">
+            <h3>Animepedia-Bot v2.0</h3>
+        </div>
+        <div id="chat-box">
+            <div class="message bot-msg">
+                <div class="msg-bubble">
+                    Konnichiwa! Saya adalah Animepedia-Bot v2.0. Ada yang bisa saya bantu?
+                </div>
+            </div>
+        </div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Tanya soal anime...">
+            <button id="send-btn">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        async function sendMessage() {
+            const messageText = userInput.value.trim();
+            if (messageText === "") return;
+
+            appendMessage('user', messageText);
+            userInput.value = ""; 
+
+            try {
+                const response = await fetch('/get_response', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: messageText }),
+                });
+
+                const data = await response.json();
+                const botResponse = data.response;
+
+                appendMessage('bot', botResponse);
+            } catch (error) {
+                console.error("Error:", error);
+                appendMessage('bot', {text: "Maaf, server sedang ada masalah.", image: null});
+            }
+        }
+
+        function appendMessage(sender, data) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender === 'user' ? 'user-msg' : 'bot-msg');
+            
+            let html = '';
+
+            if (sender === 'user') {
+                html = `<div class="msg-bubble">${data}</div>`;
+            } else {
+                const formattedText = data.text.replace(/\n/g, '<br>');
+                
+                html = '<div class="msg-bubble">';
+                
+                if (data.image) {
+                    html += `<img src="${data.image}" alt="Anime Image" class="chat-image">`;
+                }
+                
+                html += `<div class="msg-text">${formattedText}</div>`;
+                html += '</div>';
+            }
+            
+            messageDiv.innerHTML = html;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+
+</body>
+</html>

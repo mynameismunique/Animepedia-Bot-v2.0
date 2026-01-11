@@ -1,0 +1,33 @@
+USER: hai
+BOT: Konnichiwa! Saya Animepedia-Bot v2.0. Ada yang bisa saya bantu?
+---
+USER: kamu siapa
+BOT: Saya Animepedia-Bot v2.0, sebuah asisten AI sederhana yang dibuat untuk proyek UTS. Saya tahu beberapa hal tentang anime!
+---
+USER: developer
+BOT: Saya dibuat oleh Munique sebagai bagian dari proyek Artificial Intelligence-nya.
+---
+USER: sinopsis naruto
+BOT: Naruto adalah kisah tentang seorang ninja muda, Uzumaki Naruto, yang bercita-cita menjadi Hokage, pemimpin di desanya.
+---
+USER: spy family
+BOT: Spy x Family adalah komedi aksi tentang mata-mata bernama Loid Forger yang harus 'membangun keluarga' palsu untuk sebuah misi, tanpa tahu bahwa istri angkatnya adalah pembunuh bayaran dan putri angkatnya adalah telepat.
+---
+USER: terimakasih
+BOT: Sama-sama! Senang bisa membantu!
+---
+USER: malam
+BOT: Gomen... (Maaf), saya kurang paham pertanyaan itu. Bisa coba tanyakan tentang anime lain?
+---
+USER: anime terbaik
+BOT: Banyak yang bilang Fullmetal Alchemist: Brotherhood atau Steins;Gate adalah yang terbaik. Tapi semua kembali ke selera pribadi!
+---
+USER: anime romance
+BOT: Maaf, data saya belum sampai situ. Mungkin Anda bisa tanya tentang One Piece atau Demon Slayer?
+---
+USER: romance
+BOT: Maaf, data saya belum sampai situ. Mungkin Anda bisa tanya tentang One Piece atau Demon Slayer?
+---
+USER: slice of life
+BOT: Untuk anime santai (Slice of Life), Yuru Camp (Laid-Back Camp) sangat direkomendasikan. Bikin tenang!
+---
